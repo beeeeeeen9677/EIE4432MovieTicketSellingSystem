@@ -14,6 +14,7 @@ function previewFile() {
         preview.src = '';
     }
 }
+/*
 $(document).ready(function () {
     $('#register').on('click', function () {
         console.log('1');
@@ -60,3 +61,4 @@ $(document).ready(function () {
         }
     });
 });
+*/
