@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Avengers Endgame",
+        "type": "Marvel",
+        "description": "asildnmlkawfnjlkasjdaskd",
+        "trailer": "https://www.youtube.com/watch?v=TcMBFSGVi1c",
+        "image": "assets/avengers.jpg"
+    },
+    {
+        "name": "Ant Man",
+        "type": "Marvel",
+        "description": "asildnmlkawfnjlkasjdaskd",
+        "trailer": "https://www.youtube.com/watch?v=pWdKf3MneyI",
+        "image": "assets/ant_man.jpg"
+    },
+    {
+        "name": "Black Panth",
+        "type": "Marvel",
+        "description": "asildnmlkawfnjlkasjdaskd",
+        "trailer": "https://youtu.be/xjDjIWPwcPU?si=FIwXo458Zm852cl9",
+        "image": "assets/black_panth.webp"
+    },
+    {
+        "name": "Sprider Man",
+        "type": "Animation",
+        "description": "asildnmlkawfnjlkasjdaskd",
+        "trailer": "https://youtu.be/cqGjhVJWtEg?si=LjiR6O8lYndmBvyj",
+        "image": "assets/sprider_man.jpg"
+    },
+    {
+        "name": "Gridman Universe",
+        "type": "Animation",
+        "description": "Rika Akane Yume waaaiifuuu",
+        "trailer": "https://youtu.be/Q1BmA_2Zj-k?si=ITqxOvcuz_hg17Um",
+        "image": "assets/gridman.jpg"
+    },
+    {
+        "name": "Gundam Seed Freedom",
+        "type": "Animation",
+        "description": "Lacus Luna Cagalli waaaiifuuu",
+        "trailer": "https://youtu.be/qKQmF134nEw?si=NVFAbUKI_EnsUk3g",
+        "image": "assets/GUNDAM.jpg"
+    },
+    {
+        "name": "Barbie",
+        "type": "Fiction",
+        "description": "asildnmlkawfnjlkasjdaskd",
+        "trailer": "https://youtu.be/pBk4NYhWNMM?si=N_Ajw8bUCmwTVXMB",
+        "image": "assets/barbie.jpg"
+    },
+    {
+        "name": "Oppenheimer",
+        "type": "Fiction",
+        "description": "asildnmlkawfnjlkasjdaskd",
+        "trailer": "https://youtu.be/uYPbbksJxIg?si=wyPKMcpV2jp5UITD",
+        "image": "assets/oppenheimer.jpg"
+    },
+    {
+        "name": "The Marvels",
+        "type": "Marvel",
+        "description": "asildnmlkawfnjlkasjdaskd",
+        "trailer": "https://youtu.be/wS_qbDztgVY?si=ltkjjM2jPDcQCC7w",
+        "image": "assets/themarvels.jpg"
+    }
+]

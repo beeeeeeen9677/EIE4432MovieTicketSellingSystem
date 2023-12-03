@@ -1,0 +1,459 @@
+<!--LAU Ying Pan 21019528D Siu Kai Dick 21015057d-->
+
+<!doctype html>
+<html>
+    <head>
+        <!-- <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+         crossorigin="anonymous" /> -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="icon" type="image/x-icon" href="/assets/icon.ico" />
+        <!-- <script
+         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+         crossorigin="anonymous"></script> -->
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet" />
+        <title>EIE4432GP</title>
+
+        <style>
+            body,
+            html {
+                height: 100%;
+                margin: 0;
+                font-family: 'Poppins', sans-serif;
+            }
+            .hero-image {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/banner.jpg');
+                height: auto;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+            }
+
+            .user-icon {
+                border-radius: 50%;
+                object-fit: cover;
+                margin-right: 10px;
+                flex-shrink: 0;
+                margin-top: 2px;
+                display: grid;
+                place-items: center;
+            }
+            .title {
+                font-size: 35px;
+                font-weight: 600;
+            }
+            .hint-con {
+                background-color: white;
+                width: 100%;
+                z-index: 999;
+                border-radius: 5px;
+                display: none;
+            }
+            .hint {
+                padding: 15px;
+            }
+            .hint:hover {
+                background: #000;
+                color: #fff;
+                cursor: pointer;
+            }
+            .type-hint {
+                padding: 0.5rem 1rem;
+            }
+            .type-hint:hover {
+                background: #000;
+                color: #fff;
+                cursor: pointer;
+            }
+            .fade-in {
+                opacity: 0;
+                animation: fade-in 0.5s ease-in-out 0.2s forwards;
+            }
+            @keyframes fade-in {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+            @media screen and (max-width: 768px) {
+                .title {
+                    font-size: 24px;
+                }
+                .big-image {
+                    display: none !important;
+                }
+            }
+        </style>
+    </head>
+    <body class="flex flex-col">
+        <div class="w-full bg-[#f4f4f4] shrink-0 sticky top-0 z-[999]">
+            <div class="px-10">
+                <div class="flex relative justify-between items-center py-5 max-w-[1600px] mx-auto">
+                    <svg
+                        onclick="location.href='/'"
+                        class="w-28 cursor-pointer shrink-0"
+                        viewBox="0 0 85 35"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M43.236 17.096C42.66 17.096 42.176 17.064 41.784 17C41.392 16.928 41.072 16.808 40.824 16.64C40.576 16.464 40.384 16.22 40.248 15.908C40.12 15.588 40.032 15.18 39.984 14.684C39.936 14.188 39.912 13.584 39.912 12.872C39.912 12.16 39.936 11.56 39.984 11.072C40.032 10.576 40.12 10.172 40.248 9.86C40.384 9.54 40.576 9.292 40.824 9.116C41.072 8.94 41.392 8.82 41.784 8.756C42.176 8.684 42.66 8.648 43.236 8.648C43.46 8.648 43.688 8.656 43.92 8.672C44.16 8.688 44.388 8.708 44.604 8.732C44.82 8.756 45.008 8.788 45.168 8.828V9.656C44.984 9.632 44.792 9.612 44.592 9.596C44.4 9.572 44.208 9.556 44.016 9.548C43.824 9.54 43.652 9.536 43.5 9.536C43.036 9.536 42.648 9.556 42.336 9.596C42.024 9.636 41.776 9.716 41.592 9.836C41.408 9.948 41.268 10.128 41.172 10.376C41.084 10.616 41.024 10.94 40.992 11.348C40.96 11.748 40.944 12.256 40.944 12.872C40.944 13.488 40.96 14 40.992 14.408C41.024 14.808 41.084 15.132 41.172 15.38C41.268 15.62 41.408 15.8 41.592 15.92C41.776 16.032 42.024 16.108 42.336 16.148C42.648 16.188 43.036 16.208 43.5 16.208C43.772 16.208 44.068 16.196 44.388 16.172C44.708 16.148 44.984 16.12 45.216 16.088V16.94C45.048 16.972 44.848 16.996 44.616 17.012C44.392 17.036 44.16 17.056 43.92 17.072C43.68 17.088 43.452 17.096 43.236 17.096ZM47.1023 17V8.744H48.1343V17H47.1023ZM50.5359 17V8.744H51.5919L55.8759 15.068H55.9239V8.744H56.9199V17H55.9239L51.5799 10.556H51.5319V17H50.5359ZM59.3133 17V8.744H64.6773V9.632H60.3453V12.38H64.1133V13.28H60.3453V16.112H64.6773V17H59.3133ZM66.5438 17V8.744H67.9358L70.7558 15.32H70.8158L73.6238 8.744H75.0158V17H74.0078V10.4H73.9598L71.1398 17H70.3838L67.5638 10.4H67.5158V17H66.5438ZM76.5548 17L79.6748 8.744H80.9708L84.0788 17H83.0108L82.1588 14.744H78.4508L77.5988 17H76.5548ZM78.7628 13.844H81.8468L80.3348 9.8H80.2748L78.7628 13.844ZM39.336 28L42.456 19.744H43.752L46.86 28H45.792L44.94 25.744H41.232L40.38 28H39.336ZM41.544 24.844H44.628L43.116 20.8H43.056L41.544 24.844ZM51.0691 28.096C50.7731 28.096 50.4491 28.088 50.0971 28.072C49.7451 28.056 49.4011 28.036 49.0651 28.012C48.7371 27.988 48.4371 27.96 48.1651 27.928V27.052C48.4531 27.076 48.7531 27.1 49.0651 27.124C49.3851 27.148 49.6931 27.168 49.9891 27.184C50.2931 27.2 50.5491 27.208 50.7571 27.208C51.1811 27.208 51.5211 27.192 51.7771 27.16C52.0331 27.12 52.2491 27.048 52.4251 26.944C52.5451 26.872 52.6331 26.776 52.6891 26.656C52.7451 26.536 52.7771 26.396 52.7851 26.236C52.8011 26.076 52.8091 25.904 52.8091 25.72C52.8091 25.448 52.8011 25.228 52.7851 25.06C52.7691 24.892 52.7251 24.764 52.6531 24.676C52.5891 24.58 52.4811 24.512 52.3291 24.472C52.1771 24.424 51.9731 24.388 51.7171 24.364L49.6651 24.136C49.2811 24.088 48.9731 24.008 48.7411 23.896C48.5091 23.776 48.3331 23.628 48.2131 23.452C48.1011 23.268 48.0251 23.052 47.9851 22.804C47.9451 22.548 47.9251 22.264 47.9251 21.952C47.9251 21.448 47.9891 21.044 48.1171 20.74C48.2531 20.436 48.4491 20.204 48.7051 20.044C48.9611 19.884 49.2691 19.78 49.6291 19.732C49.9971 19.676 50.4171 19.648 50.8891 19.648C51.1931 19.648 51.5051 19.656 51.8251 19.672C52.1451 19.688 52.4451 19.712 52.7251 19.744C53.0131 19.768 53.2491 19.8 53.4331 19.84V20.692C53.2251 20.66 52.9851 20.632 52.7131 20.608C52.4411 20.584 52.1611 20.568 51.8731 20.56C51.5931 20.544 51.3251 20.536 51.0691 20.536C50.6291 20.536 50.2731 20.556 50.0011 20.596C49.7291 20.636 49.5131 20.708 49.3531 20.812C49.1771 20.916 49.0651 21.064 49.0171 21.256C48.9771 21.44 48.9571 21.664 48.9571 21.928C48.9571 22.24 48.9771 22.484 49.0171 22.66C49.0651 22.828 49.1611 22.948 49.3051 23.02C49.4571 23.084 49.6811 23.132 49.9771 23.164L51.9811 23.392C52.2691 23.416 52.5211 23.456 52.7371 23.512C52.9611 23.56 53.1531 23.644 53.3131 23.764C53.4731 23.884 53.5931 24.056 53.6731 24.28C53.7211 24.392 53.7571 24.516 53.7811 24.652C53.8051 24.788 53.8211 24.94 53.8291 25.108C53.8451 25.268 53.8531 25.448 53.8531 25.648C53.8531 26.104 53.8091 26.484 53.7211 26.788C53.6331 27.084 53.5091 27.32 53.3491 27.496C53.1891 27.672 52.9931 27.804 52.7611 27.892C52.5291 27.98 52.2691 28.036 51.9811 28.06C51.7011 28.084 51.3971 28.096 51.0691 28.096ZM58.6043 28.096C58.3083 28.096 57.9843 28.088 57.6323 28.072C57.2803 28.056 56.9363 28.036 56.6003 28.012C56.2723 27.988 55.9723 27.96 55.7003 27.928V27.052C55.9883 27.076 56.2883 27.1 56.6003 27.124C56.9203 27.148 57.2283 27.168 57.5243 27.184C57.8283 27.2 58.0843 27.208 58.2923 27.208C58.7163 27.208 59.0563 27.192 59.3123 27.16C59.5683 27.12 59.7843 27.048 59.9603 26.944C60.0803 26.872 60.1683 26.776 60.2243 26.656C60.2803 26.536 60.3123 26.396 60.3203 26.236C60.3363 26.076 60.3443 25.904 60.3443 25.72C60.3443 25.448 60.3363 25.228 60.3203 25.06C60.3043 24.892 60.2603 24.764 60.1883 24.676C60.1243 24.58 60.0163 24.512 59.8643 24.472C59.7123 24.424 59.5083 24.388 59.2523 24.364L57.2003 24.136C56.8163 24.088 56.5083 24.008 56.2763 23.896C56.0443 23.776 55.8683 23.628 55.7483 23.452C55.6363 23.268 55.5603 23.052 55.5203 22.804C55.4803 22.548 55.4603 22.264 55.4603 21.952C55.4603 21.448 55.5243 21.044 55.6523 20.74C55.7883 20.436 55.9843 20.204 56.2402 20.044C56.4963 19.884 56.8043 19.78 57.1643 19.732C57.5323 19.676 57.9523 19.648 58.4243 19.648C58.7283 19.648 59.0403 19.656 59.3603 19.672C59.6803 19.688 59.9803 19.712 60.2603 19.744C60.5483 19.768 60.7843 19.8 60.9683 19.84V20.692C60.7603 20.66 60.5203 20.632 60.2483 20.608C59.9763 20.584 59.6963 20.568 59.4083 20.56C59.1283 20.544 58.8603 20.536 58.6043 20.536C58.1643 20.536 57.8083 20.556 57.5363 20.596C57.2643 20.636 57.0483 20.708 56.8883 20.812C56.7123 20.916 56.6003 21.064 56.5523 21.256C56.5123 21.44 56.4923 21.664 56.4923 21.928C56.4923 22.24 56.5123 22.484 56.5523 22.66C56.6003 22.828 56.6963 22.948 56.8403 23.02C56.9923 23.084 57.2163 23.132 57.5123 23.164L59.5163 23.392C59.8043 23.416 60.0563 23.456 60.2723 23.512C60.4963 23.56 60.6883 23.644 60.8483 23.764C61.0083 23.884 61.1283 24.056 61.2083 24.28C61.2563 24.392 61.2923 24.516 61.3163 24.652C61.3403 24.788 61.3563 24.94 61.3643 25.108C61.3803 25.268 61.3883 25.448 61.3883 25.648C61.3883 26.104 61.3443 26.484 61.2563 26.788C61.1683 27.084 61.0443 27.32 60.8843 27.496C60.7243 27.672 60.5283 27.804 60.2963 27.892C60.0643 27.98 59.8043 28.036 59.5163 28.06C59.2363 28.084 58.9323 28.096 58.6043 28.096ZM63.3914 28V19.744H64.4234V28H63.3914ZM69.573 28.096C69.277 28.096 68.953 28.088 68.601 28.072C68.249 28.056 67.905 28.036 67.569 28.012C67.241 27.988 66.941 27.96 66.669 27.928V27.052C66.957 27.076 67.257 27.1 67.569 27.124C67.889 27.148 68.197 27.168 68.493 27.184C68.797 27.2 69.053 27.208 69.261 27.208C69.685 27.208 70.025 27.192 70.281 27.16C70.537 27.12 70.753 27.048 70.929 26.944C71.049 26.872 71.137 26.776 71.193 26.656C71.249 26.536 71.281 26.396 71.289 26.236C71.305 26.076 71.313 25.904 71.313 25.72C71.313 25.448 71.305 25.228 71.289 25.06C71.273 24.892 71.229 24.764 71.157 24.676C71.093 24.58 70.985 24.512 70.833 24.472C70.681 24.424 70.477 24.388 70.221 24.364L68.169 24.136C67.785 24.088 67.477 24.008 67.245 23.896C67.013 23.776 66.837 23.628 66.717 23.452C66.605 23.268 66.529 23.052 66.489 22.804C66.449 22.548 66.429 22.264 66.429 21.952C66.429 21.448 66.493 21.044 66.621 20.74C66.757 20.436 66.953 20.204 67.209 20.044C67.465 19.884 67.773 19.78 68.133 19.732C68.501 19.676 68.921 19.648 69.393 19.648C69.697 19.648 70.009 19.656 70.329 19.672C70.649 19.688 70.949 19.712 71.229 19.744C71.517 19.768 71.753 19.8 71.937 19.84V20.692C71.729 20.66 71.489 20.632 71.217 20.608C70.945 20.584 70.665 20.568 70.377 20.56C70.097 20.544 69.829 20.536 69.573 20.536C69.133 20.536 68.777 20.556 68.505 20.596C68.233 20.636 68.017 20.708 67.857 20.812C67.681 20.916 67.569 21.064 67.521 21.256C67.481 21.44 67.461 21.664 67.461 21.928C67.461 22.24 67.481 22.484 67.521 22.66C67.569 22.828 67.665 22.948 67.809 23.02C67.961 23.084 68.185 23.132 68.481 23.164L70.485 23.392C70.773 23.416 71.025 23.456 71.241 23.512C71.465 23.56 71.657 23.644 71.817 23.764C71.977 23.884 72.097 24.056 72.177 24.28C72.225 24.392 72.261 24.516 72.285 24.652C72.309 24.788 72.325 24.94 72.333 25.108C72.349 25.268 72.357 25.448 72.357 25.648C72.357 26.104 72.313 26.484 72.225 26.788C72.137 27.084 72.013 27.32 71.853 27.496C71.693 27.672 71.497 27.804 71.265 27.892C71.033 27.98 70.773 28.036 70.485 28.06C70.205 28.084 69.901 28.096 69.573 28.096ZM76.1242 28V20.656H73.5202V19.744H79.7722V20.656H77.1562V28H76.1242Z"
+                            fill="#1A1917" />
+                        <path
+                            d="M3.60672 4.34668C0.131089 5.65004 0.131095 26.9383 3.60672 29.1106C7.08235 31.2828 20.5504 28.2417 21.8538 26.5038C23.1572 24.766 23.5916 10.8635 21.8538 8.25676C20.116 5.65004 7.08236 3.04331 3.60672 4.34668Z"
+                            fill="#F87F20"
+                            stroke="#F87F20" />
+                        <path
+                            d="M10.3176 1.44122C5.89411 3.10005 5.89412 30.1942 10.3176 32.9589C14.7412 35.7236 31.8824 31.853 33.5412 29.6413C35.2 27.4295 35.753 9.73535 33.5412 6.4177C31.3294 3.10005 14.7412 -0.217601 10.3176 1.44122Z"
+                            fill="#F4F4F4"
+                            stroke="#F4F4F4" />
+                        <path
+                            d="M11 2.5C7 4 7.50001 29.5 11.5 32C15.5 34.5 31 30.5 32.5 28.5C34 26.5 34.5 10 32.5 7C30.5 4 15 1 11 2.5Z"
+                            fill="#D1274A"
+                            stroke="#D1274A" />
+                    </svg>
+                    <div
+                        class="flex absolute top-[calc(100%+1rem)] xl:top-[calc(100%-38px)] flex-wrap transition-all left-[50%] translate-x-[-50%] gap-4 md:max-w-[80%] md:max-w-[800px] w-full mx-auto shadow-xl p-4 z-[999] rounded-xl border border-[#f8f9ff] bg-white">
+                        <div class="flex gap-4 flex-1">
+                            <div class="search-con relative flex-1">
+                                <div class="flex items-center border px-2 rounded-lg min-w-[200px]">
+                                    <i class="material-icons">search</i>
+
+                                    <input
+                                        class="input-search m-0 p-2 focus:outline-none flex-1 w-[50px]"
+                                        type="text"
+                                        placeholder="Search for a flim" />
+
+                                    <div
+                                        class="hint-con overflow-hidden border bg-white z-[999] rounded-lg hidden absolute top-[calc(100%+5px)] left-0"></div>
+                                </div>
+                            </div>
+                            <div
+                                class="type-con relative min-w-[141px] justify-between border rounded-md flex items-center px-4 pr-2 gap-2 cursor-default">
+                                <p class="selected-type">All Type</p>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="arrow-down"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24">
+                                    <g fill="none" fill-rule="evenodd">
+                                        <path
+                                            d="M24 0v24H0V0h24ZM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018Zm.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01l-.184-.092Z" />
+                                        <path
+                                            fill="currentColor"
+                                            d="M12.707 15.707a1 1 0 0 1-1.414 0L5.636 10.05A1 1 0 1 1 7.05 8.636l4.95 4.95l4.95-4.95a1 1 0 0 1 1.414 1.414l-5.657 5.657Z" />
+                                    </g>
+                                </svg>
+                                <div
+                                    class="type-hint-con hidden absolute top-[calc(100%+5px)] left-0 w-full bg-white border rounded-md">
+                                    <p class="p-4 py-2 all-type type-hint">All Type</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button
+                            class="border-2 min-h-[42px] max-[612px]:flex-1 border-black hover:bg-black hover:text-white transition-colors text-black px-6 rounded-md font-semibold btn-search">
+                            Search
+                        </button>
+                    </div>
+                    <div class="flex justify-between gap-1 w-fit items-center py-[10px]">
+                        <div class="user-icon group cursor-pointer relative w-fit">
+                            <div class="flex gap-3 items-center">
+                                <img class="image-avatar max-w-[25px] rounded-md" />
+                                <p class="username-con group-hover:underline font-medium text-sm"></p>
+                            </div>
+                            <div
+                                class="user-option-con absolute top-[calc(100%+1rem)] z-[999] right-0 bg-white overflow-hidden border rounded-lg hidden">
+                                <button
+                                    onclick="profile()"
+                                    class="p-4 px-10 hover:bg-black hover:text-white transition-colors w-full whitespace-nowrap">
+                                    UserProfile
+                                </button>
+                                <button
+                                    onclick="history()"
+                                    class="p-4 px-10 hover:bg-black hover:text-white transition-colors w-full whitespace-nowrap">
+                                    Transaction History
+                                </button>
+                                <button
+                                    onclick="signout()"
+                                    class="p-4 px-10 hover:bg-black hover:text-white transition-colors w-full whitespace-nowrap">
+                                    Signout
+                                </button>
+                            </div>
+                            <div
+                                class="admin-option-con absolute top-[calc(100%+0.5rem)] z-[999] right-0 bg-white overflow-hidden border rounded-md hidden">
+                                <button
+                                    onclick="profile()"
+                                    class="p-4 px-10 hover:bg-black hover:text-white transition-colors w-full whitespace-nowrap">
+                                    UserProfile
+                                </button>
+                                <button
+                                    onclick="history()"
+                                    class="p-4 px-10 hover:bg-black hover:text-white transition-colors w-full whitespace-nowrap">
+                                    Transaction History
+                                </button>
+
+                                <button
+                                    onclick="admin_manage()"
+                                    class="p-4 px-10 hover:bg-black hover:text-white transition-colors w-full whitespace-nowrap">
+                                    Event management
+                                </button>
+                                <button
+                                    onclick="signout()"
+                                    class="p-4 px-10 hover:bg-black hover:text-white transition-colors w-full whitespace-nowrap">
+                                    Signout
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            onclick="location.href='/login'"
+                            class="btn-login flex group cursor-pointer items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    fill="currentColor"
+                                    d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z" />
+                            </svg>
+                            <p class="login-button mx-lg-1 group-hover:underline">Login</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="hero-image relative">
+         <div class="mx-auto text-white w-fit py-24 pb-28 mb-16">
+            <h1 class="title">Movie Ticket Selling System</h1>
+         </div>
+         <div
+            class="flex absolute top-[calc(100%-38px)] left-[50%] translate-x-[-50%] gap-2 max-w-[80%] md:max-w-[800px] w-full mx-auto shadow-xl p-4 z-[999] rounded-xl border border-[#f8f9ff] bg-white">
+            <div class="search-con relative flex-1">
+               <div class="flex items-center border px-2 rounded-lg">
+                  <i class="material-icons">search</i>
+
+                  <input
+                     class="input-search m-0 p-2 focus:outline-none flex-1"
+                     type="text"
+                     placeholder="Search for a flim" />
+                  <div
+                     class="hint-con overflow-hidden border bg-white z-[999] rounded-lg hidden absolute top-[calc(100%+5px)] left-0"></div>
+               </div>
+            </div>
+            <button class="bg-[#ff7d15] text-white px-4 rounded-md font-semibold btn-search">Search</button>
+         </div>
+      </div> -->
+        <div class="px-10 max-[612px]:mt-36 mt-20 xl:mt-6 transition-all">
+            <div class="pb-3 w-full max-w-[1600px] mx-auto">
+                <div class="w-fit mt-10 flex gap-4 items-center">
+                    <a class="font-semibold text-[#131313] text-3xl" aria-current="page" href="index.html"
+                        >Now Playing</a
+                    >
+                </div>
+            </div>
+        </div>
+
+        <main class="flex-1 flex flex-col justify-between">
+            <section class="p-10 pt-6 pb-24">
+                <div class="flex max-w-[1600px] mx-auto items-start gap-10 flex-wrap">
+                    <!-- <img
+                  src="assets/gridman.jpg"
+                  alt="Gridman Universe"
+                  class="mx-auto object-contain rounded-lg flex-1 hidden min-[1300px]:block"
+                  style="max-width: 700px" /> -->
+
+                    <div
+                        class="grid flex-1 grid-cols-[repeat(auto-fill,minmax(275px,1fr))] place-items-center shrink-0 gap-10"
+                        id="index"></div>
+                </div>
+            </section>
+            <footer class="bg-black p-10 text-white text-center">
+                <div class="max-w-[1600px] mx-auto py-10">
+                    <svg class="w-40" viewBox="0 0 85 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M43.236 17.096C42.66 17.096 42.176 17.064 41.784 17C41.392 16.928 41.072 16.808 40.824 16.64C40.576 16.464 40.384 16.22 40.248 15.908C40.12 15.588 40.032 15.18 39.984 14.684C39.936 14.188 39.912 13.584 39.912 12.872C39.912 12.16 39.936 11.56 39.984 11.072C40.032 10.576 40.12 10.172 40.248 9.86C40.384 9.54 40.576 9.292 40.824 9.116C41.072 8.94 41.392 8.82 41.784 8.756C42.176 8.684 42.66 8.648 43.236 8.648C43.46 8.648 43.688 8.656 43.92 8.672C44.16 8.688 44.388 8.708 44.604 8.732C44.82 8.756 45.008 8.788 45.168 8.828V9.656C44.984 9.632 44.792 9.612 44.592 9.596C44.4 9.572 44.208 9.556 44.016 9.548C43.824 9.54 43.652 9.536 43.5 9.536C43.036 9.536 42.648 9.556 42.336 9.596C42.024 9.636 41.776 9.716 41.592 9.836C41.408 9.948 41.268 10.128 41.172 10.376C41.084 10.616 41.024 10.94 40.992 11.348C40.96 11.748 40.944 12.256 40.944 12.872C40.944 13.488 40.96 14 40.992 14.408C41.024 14.808 41.084 15.132 41.172 15.38C41.268 15.62 41.408 15.8 41.592 15.92C41.776 16.032 42.024 16.108 42.336 16.148C42.648 16.188 43.036 16.208 43.5 16.208C43.772 16.208 44.068 16.196 44.388 16.172C44.708 16.148 44.984 16.12 45.216 16.088V16.94C45.048 16.972 44.848 16.996 44.616 17.012C44.392 17.036 44.16 17.056 43.92 17.072C43.68 17.088 43.452 17.096 43.236 17.096ZM47.1023 17V8.744H48.1343V17H47.1023ZM50.5359 17V8.744H51.5919L55.8759 15.068H55.9239V8.744H56.9199V17H55.9239L51.5799 10.556H51.5319V17H50.5359ZM59.3133 17V8.744H64.6773V9.632H60.3453V12.38H64.1133V13.28H60.3453V16.112H64.6773V17H59.3133ZM66.5438 17V8.744H67.9358L70.7558 15.32H70.8158L73.6238 8.744H75.0158V17H74.0078V10.4H73.9598L71.1398 17H70.3838L67.5638 10.4H67.5158V17H66.5438ZM76.5548 17L79.6748 8.744H80.9708L84.0788 17H83.0108L82.1588 14.744H78.4508L77.5988 17H76.5548ZM78.7628 13.844H81.8468L80.3348 9.8H80.2748L78.7628 13.844ZM39.336 28L42.456 19.744H43.752L46.86 28H45.792L44.94 25.744H41.232L40.38 28H39.336ZM41.544 24.844H44.628L43.116 20.8H43.056L41.544 24.844ZM51.0691 28.096C50.7731 28.096 50.4491 28.088 50.0971 28.072C49.7451 28.056 49.4011 28.036 49.0651 28.012C48.7371 27.988 48.4371 27.96 48.1651 27.928V27.052C48.4531 27.076 48.7531 27.1 49.0651 27.124C49.3851 27.148 49.6931 27.168 49.9891 27.184C50.2931 27.2 50.5491 27.208 50.7571 27.208C51.1811 27.208 51.5211 27.192 51.7771 27.16C52.0331 27.12 52.2491 27.048 52.4251 26.944C52.5451 26.872 52.6331 26.776 52.6891 26.656C52.7451 26.536 52.7771 26.396 52.7851 26.236C52.8011 26.076 52.8091 25.904 52.8091 25.72C52.8091 25.448 52.8011 25.228 52.7851 25.06C52.7691 24.892 52.7251 24.764 52.6531 24.676C52.5891 24.58 52.4811 24.512 52.3291 24.472C52.1771 24.424 51.9731 24.388 51.7171 24.364L49.6651 24.136C49.2811 24.088 48.9731 24.008 48.7411 23.896C48.5091 23.776 48.3331 23.628 48.2131 23.452C48.1011 23.268 48.0251 23.052 47.9851 22.804C47.9451 22.548 47.9251 22.264 47.9251 21.952C47.9251 21.448 47.9891 21.044 48.1171 20.74C48.2531 20.436 48.4491 20.204 48.7051 20.044C48.9611 19.884 49.2691 19.78 49.6291 19.732C49.9971 19.676 50.4171 19.648 50.8891 19.648C51.1931 19.648 51.5051 19.656 51.8251 19.672C52.1451 19.688 52.4451 19.712 52.7251 19.744C53.0131 19.768 53.2491 19.8 53.4331 19.84V20.692C53.2251 20.66 52.9851 20.632 52.7131 20.608C52.4411 20.584 52.1611 20.568 51.8731 20.56C51.5931 20.544 51.3251 20.536 51.0691 20.536C50.6291 20.536 50.2731 20.556 50.0011 20.596C49.7291 20.636 49.5131 20.708 49.3531 20.812C49.1771 20.916 49.0651 21.064 49.0171 21.256C48.9771 21.44 48.9571 21.664 48.9571 21.928C48.9571 22.24 48.9771 22.484 49.0171 22.66C49.0651 22.828 49.1611 22.948 49.3051 23.02C49.4571 23.084 49.6811 23.132 49.9771 23.164L51.9811 23.392C52.2691 23.416 52.5211 23.456 52.7371 23.512C52.9611 23.56 53.1531 23.644 53.3131 23.764C53.4731 23.884 53.5931 24.056 53.6731 24.28C53.7211 24.392 53.7571 24.516 53.7811 24.652C53.8051 24.788 53.8211 24.94 53.8291 25.108C53.8451 25.268 53.8531 25.448 53.8531 25.648C53.8531 26.104 53.8091 26.484 53.7211 26.788C53.6331 27.084 53.5091 27.32 53.3491 27.496C53.1891 27.672 52.9931 27.804 52.7611 27.892C52.5291 27.98 52.2691 28.036 51.9811 28.06C51.7011 28.084 51.3971 28.096 51.0691 28.096ZM58.6043 28.096C58.3083 28.096 57.9843 28.088 57.6323 28.072C57.2803 28.056 56.9363 28.036 56.6003 28.012C56.2723 27.988 55.9723 27.96 55.7003 27.928V27.052C55.9883 27.076 56.2883 27.1 56.6003 27.124C56.9203 27.148 57.2283 27.168 57.5243 27.184C57.8283 27.2 58.0843 27.208 58.2923 27.208C58.7163 27.208 59.0563 27.192 59.3123 27.16C59.5683 27.12 59.7843 27.048 59.9603 26.944C60.0803 26.872 60.1683 26.776 60.2243 26.656C60.2803 26.536 60.3123 26.396 60.3203 26.236C60.3363 26.076 60.3443 25.904 60.3443 25.72C60.3443 25.448 60.3363 25.228 60.3203 25.06C60.3043 24.892 60.2603 24.764 60.1883 24.676C60.1243 24.58 60.0163 24.512 59.8643 24.472C59.7123 24.424 59.5083 24.388 59.2523 24.364L57.2003 24.136C56.8163 24.088 56.5083 24.008 56.2763 23.896C56.0443 23.776 55.8683 23.628 55.7483 23.452C55.6363 23.268 55.5603 23.052 55.5203 22.804C55.4803 22.548 55.4603 22.264 55.4603 21.952C55.4603 21.448 55.5243 21.044 55.6523 20.74C55.7883 20.436 55.9843 20.204 56.2402 20.044C56.4963 19.884 56.8043 19.78 57.1643 19.732C57.5323 19.676 57.9523 19.648 58.4243 19.648C58.7283 19.648 59.0403 19.656 59.3603 19.672C59.6803 19.688 59.9803 19.712 60.2603 19.744C60.5483 19.768 60.7843 19.8 60.9683 19.84V20.692C60.7603 20.66 60.5203 20.632 60.2483 20.608C59.9763 20.584 59.6963 20.568 59.4083 20.56C59.1283 20.544 58.8603 20.536 58.6043 20.536C58.1643 20.536 57.8083 20.556 57.5363 20.596C57.2643 20.636 57.0483 20.708 56.8883 20.812C56.7123 20.916 56.6003 21.064 56.5523 21.256C56.5123 21.44 56.4923 21.664 56.4923 21.928C56.4923 22.24 56.5123 22.484 56.5523 22.66C56.6003 22.828 56.6963 22.948 56.8403 23.02C56.9923 23.084 57.2163 23.132 57.5123 23.164L59.5163 23.392C59.8043 23.416 60.0563 23.456 60.2723 23.512C60.4963 23.56 60.6883 23.644 60.8483 23.764C61.0083 23.884 61.1283 24.056 61.2083 24.28C61.2563 24.392 61.2923 24.516 61.3163 24.652C61.3403 24.788 61.3563 24.94 61.3643 25.108C61.3803 25.268 61.3883 25.448 61.3883 25.648C61.3883 26.104 61.3443 26.484 61.2563 26.788C61.1683 27.084 61.0443 27.32 60.8843 27.496C60.7243 27.672 60.5283 27.804 60.2963 27.892C60.0643 27.98 59.8043 28.036 59.5163 28.06C59.2363 28.084 58.9323 28.096 58.6043 28.096ZM63.3914 28V19.744H64.4234V28H63.3914ZM69.573 28.096C69.277 28.096 68.953 28.088 68.601 28.072C68.249 28.056 67.905 28.036 67.569 28.012C67.241 27.988 66.941 27.96 66.669 27.928V27.052C66.957 27.076 67.257 27.1 67.569 27.124C67.889 27.148 68.197 27.168 68.493 27.184C68.797 27.2 69.053 27.208 69.261 27.208C69.685 27.208 70.025 27.192 70.281 27.16C70.537 27.12 70.753 27.048 70.929 26.944C71.049 26.872 71.137 26.776 71.193 26.656C71.249 26.536 71.281 26.396 71.289 26.236C71.305 26.076 71.313 25.904 71.313 25.72C71.313 25.448 71.305 25.228 71.289 25.06C71.273 24.892 71.229 24.764 71.157 24.676C71.093 24.58 70.985 24.512 70.833 24.472C70.681 24.424 70.477 24.388 70.221 24.364L68.169 24.136C67.785 24.088 67.477 24.008 67.245 23.896C67.013 23.776 66.837 23.628 66.717 23.452C66.605 23.268 66.529 23.052 66.489 22.804C66.449 22.548 66.429 22.264 66.429 21.952C66.429 21.448 66.493 21.044 66.621 20.74C66.757 20.436 66.953 20.204 67.209 20.044C67.465 19.884 67.773 19.78 68.133 19.732C68.501 19.676 68.921 19.648 69.393 19.648C69.697 19.648 70.009 19.656 70.329 19.672C70.649 19.688 70.949 19.712 71.229 19.744C71.517 19.768 71.753 19.8 71.937 19.84V20.692C71.729 20.66 71.489 20.632 71.217 20.608C70.945 20.584 70.665 20.568 70.377 20.56C70.097 20.544 69.829 20.536 69.573 20.536C69.133 20.536 68.777 20.556 68.505 20.596C68.233 20.636 68.017 20.708 67.857 20.812C67.681 20.916 67.569 21.064 67.521 21.256C67.481 21.44 67.461 21.664 67.461 21.928C67.461 22.24 67.481 22.484 67.521 22.66C67.569 22.828 67.665 22.948 67.809 23.02C67.961 23.084 68.185 23.132 68.481 23.164L70.485 23.392C70.773 23.416 71.025 23.456 71.241 23.512C71.465 23.56 71.657 23.644 71.817 23.764C71.977 23.884 72.097 24.056 72.177 24.28C72.225 24.392 72.261 24.516 72.285 24.652C72.309 24.788 72.325 24.94 72.333 25.108C72.349 25.268 72.357 25.448 72.357 25.648C72.357 26.104 72.313 26.484 72.225 26.788C72.137 27.084 72.013 27.32 71.853 27.496C71.693 27.672 71.497 27.804 71.265 27.892C71.033 27.98 70.773 28.036 70.485 28.06C70.205 28.084 69.901 28.096 69.573 28.096ZM76.1242 28V20.656H73.5202V19.744H79.7722V20.656H77.1562V28H76.1242Z"
+                            fill="white" />
+                        <path
+                            d="M3.60672 4.34668C0.131089 5.65004 0.131095 26.9383 3.60672 29.1106C7.08235 31.2828 20.5504 28.2417 21.8538 26.5038C23.1572 24.766 23.5916 10.8635 21.8538 8.25676C20.116 5.65004 7.08236 3.04331 3.60672 4.34668Z"
+                            fill="#F87F20"
+                            stroke="#F87F20" />
+                        <path
+                            d="M10.3176 1.44122C5.89411 3.10005 5.89412 30.1942 10.3176 32.9589C14.7412 35.7236 31.8824 31.853 33.5412 29.6413C35.2 27.4295 35.753 9.73535 33.5412 6.4177C31.3294 3.10005 14.7412 -0.217601 10.3176 1.44122Z"
+                            fill="black"
+                            stroke="black" />
+                        <path
+                            d="M11 2.5C7 4 7.50001 29.5 11.5 32C15.5 34.5 31 30.5 32.5 28.5C34 26.5 34.5 10 32.5 7C30.5 4 15 1 11 2.5Z"
+                            fill="#D1274A"
+                            stroke="#D1274A" />
+                    </svg>
+                </div>
+            </footer>
+        </main>
+        <script src="js/index.js"></script>
+        <script src="./js/validation.js"></script>
+        <script>
+            // Search hint related variables and functions
+            var inputField = document.querySelector('.input-search');
+            var hintContainer = document.querySelector('.hint-con');
+            var filteredData = [];
+            var type = '';
+            var userInput = '';
+            var typeCon = document.querySelector('.type-con');
+            var selectedType = document.querySelector('.selected-type');
+            var typeConEnable = false;
+            var typeHintCon = document.querySelector('.type-hint-con');
+            var allType = document.querySelector('.all-type');
+
+            // Function to create hint
+            const createHint = (item) => {
+                var hintElement = document.createElement('div');
+                hintElement.classList.add('hint');
+                hintElement.textContent = item.name;
+                hintElement.addEventListener('click', function () {
+                    userInput = item.name;
+                    inputField.value = item.name;
+                    hintContainer.style.display = 'none';
+                    filteredData = movieList.filter((_item) => _item.name.includes(userInput));
+                    filteredData = filteredData.filter((_item) => _item.type.includes(type));
+                });
+                hintContainer.appendChild(hintElement);
+            };
+
+            var movieList = [];
+
+            // Fetch data and create hints
+            $.get('/movie/homepage')
+                .done(function (data) {
+                    movieList = data;
+                    hintContainer.innerHTML = '';
+                    movieList.forEach(function (item) {
+                        createHint(item);
+                    });
+
+                    document.querySelector('.input-search').addEventListener('input', function (event) {
+                        userInput = document.querySelector('.input-search').value;
+                        filteredData = movieList.filter((_item) => _item.name.includes(userInput));
+                        filteredData = filteredData.filter((_item) => _item.type.includes(type));
+                        hintContainer.innerHTML = '';
+                        filteredData.forEach(function (item) {
+                            createHint(item);
+                        });
+                    });
+                })
+                .fail(function () {
+                    console.log('Error occurred');
+                });
+
+            // Type container click event listener
+            typeCon.addEventListener('click', function () {
+                typeConEnable = !typeConEnable;
+                typeHintCon.style.display = typeConEnable ? 'block' : 'none';
+            });
+
+            // Fetch movie types
+            $.get('/movie/type').done(function (data) {
+                console.log(data);
+                data.forEach(function (item) {
+                    var typeElement = document.createElement('div');
+                    typeElement.classList.add('type-hint');
+                    typeElement.textContent = item;
+                    typeElement.addEventListener('click', function () {
+                        typeHintCon.style.display = 'none';
+                        type = item;
+                        selectedType.innerHTML = item;
+                        //filteredData filter name and type
+                        filteredData = movieList.filter((_item) => _item.name.includes(userInput));
+                        filteredData = filteredData.filter((_item) => _item.type.includes(type));
+                    });
+                    typeHintCon.appendChild(typeElement);
+                });
+            });
+
+            // If user click outside of type hint container and hint con, hide it
+            allType.addEventListener('click', function () {
+                type = '';
+                selectedType.innerHTML = 'All Type';
+                filteredData = movieList.filter((_item) => _item.name.includes(userInput));
+            });
+
+            // Document click event listener
+            document.addEventListener('click', function (event) {
+                if (
+                    !event.target.classList.contains('type-hint') &&
+                    !event.target.classList.contains('type-con') &&
+                    !event.target.classList.contains('selected-type') &&
+                    !event.target.classList.contains('arrow-down')
+                ) {
+                    typeHintCon.style.display = 'none';
+                    typeConEnable = false;
+                }
+            });
+
+            // Handle hint hover state
+            var isHintHover = false;
+            hintContainer.addEventListener('mouseover', function () {
+                isHintHover = true;
+            });
+            hintContainer.addEventListener('mouseout', function () {
+                isHintHover = false;
+            });
+
+            // Handle input field focus and blur events
+            inputField.addEventListener('blur', function () {
+                hintContainer.style.display = isHintHover ? 'block' : 'none';
+            });
+            inputField.addEventListener('focus', function () {
+                hintContainer.style.display = 'block';
+                inputField.addEventListener('keyup', function (event) {
+                    if (event.keyCode === 13) {
+                        event.preventDefault();
+                        document.querySelector('.btn-search').click();
+                    }
+                });
+            });
+            // Search button event listener
+            document.querySelector('.btn-search').addEventListener('click', function () {
+                var indexCon = document.querySelector('#index');
+                console.log(userInput, type);
+                indexCon.innerHTML = '';
+                console.log(filteredData);
+                filteredData.forEach(function (item) {
+                    indexCon.innerHTML += `<div class="fade-in group mx-auto max-w-[300px] w-full">
+                <div>
+                        <img src="${
+                            item.image
+                        }" class="poster group-hover:scale-[1.075] shadow-lg transition-all duration-[0.3s] object-cover w-full aspect-[1/1.5] rounded-md">
+                        <div class="card-body mt-3 group-hover:mt-6 transition-all duration-[0.3s]">
+                            <p class="card-text font-semibold text-xl box-content h-14 w-full">${item.name}</p>
+                            <div class="flex items-center gap-3 mt-10 transition-all duration-[0.3s] group-hover:mt-7 text-[#888888]">
+                              <p class="px-2 rounded-[3px] w-fit bg-[#848484] text-white text-sm font-medium">
+                                 ${item.type}
+                              </p>
+                              <p class="font-medium">R</p>
+                              <p class="font-medium">${convertTime(item.RunTime)}</p>
+                            </div>
+                            <button onclick="location.href='/movie/showtime/${
+                                item.name
+                            }';" class="hover:bg-black w-full hover:text-white transition-colors border-2 border-black text-center font-semibold mt-6 w-full p-4 py-2 text-lg rounded-md">BUY TICKET</button>
+                        </div>
+                </div> 
+            </div>`;
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+[
+   {
+      "username": "testuser",
+      "password": "testuser",
+      "nickname": "test",
+      "email": "test@gmail.com",
+      "gender": "male",
+      "birthday": "2023-11-11",
+      "role": "user",
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Cima_da_Conegliano%2C_God_the_Father.jpg/640px-Cima_da_Conegliano%2C_God_the_Father.jpg",
+      "enabled": true
+   },
+   {
+      "username": "testuser2",
+      "password": "testuser2",
+      "nickname": "test2",
+      "email": "test2@yahoo.com",
+      "gender": "female",
+      "birthday": "2022-12-31",
+      "role": "user",
+      "avatar": "https://cdn3.iconfinder.com/data/icons/cinema-40/64/Ironman-marvel_movie_marvel_superhero_avengers-512.png",
+      "enabled": true
+   },
+   { "username": "admin", "password": "adminpass", "role": "admin", "enabled": true }
+]

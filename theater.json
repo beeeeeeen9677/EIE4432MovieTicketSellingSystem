@@ -1,0 +1,5 @@
+[
+    { "cinema": 1, "column": 10, "row": 5, "price_cate1": 90, "price_cate2": 110, "seat_cate2": [] },
+    { "cinema": 2, "column": 12, "row": 5, "price_cate1": 70, "price_cate2": 90, "seat_cate2": [] },
+    { "cinema": 3, "column": 10, "row": 4, "price_cate1": 80, "price_cate2": 100, "seat_cate2": ["A06", "B08"] }
+]

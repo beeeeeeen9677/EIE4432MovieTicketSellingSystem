@@ -1,0 +1,123 @@
+[
+    {
+        "name": "Avengers Endgame",
+        "type": "Marvel",
+        "bookedSeat": [],
+        "showtime": "2023/12/08 10:00",
+        "RunTime": 150,
+        "cinema": 1,
+        "language": "english",
+        "version": "2D",
+        "image": "assets/avengers.jpg"
+    },
+    {
+        "name": "Ant Man",
+        "type": "Marvel",
+        "bookedSeat": [],
+        "showtime": "2023/12/08 10:00",
+        "RunTime": 140,
+        "cinema": 2,
+        "language": "english",
+        "version": "2D",
+        "image": "assets/ant_man.jpg"
+    },
+    {
+        "name": "Black Panth",
+        "type": "Marvel",
+        "bookedSeat": [],
+        "showtime": "2023/12/09 10:00",
+        "RunTime": 120,
+        "cinema": 2,
+        "language": "english",
+        "version": "2D",
+        "image": "assets/black_panth.webp"
+    },
+    {
+        "name": "Sprider Man",
+        "type": "Animation",
+        "bookedSeat": [],
+        "showtime": "2023/12/09 10:00",
+        "RunTime": 150,
+        "cinema": 1,
+        "language": "english",
+        "version": "2D",
+        "image": "assets/sprider_man.jpg"
+    },
+    {
+        "name": "Gridman Universe",
+        "type": "Animation",
+        "bookedSeat": [],
+        "showtime": "2023/12/04 18:00",
+        "RunTime": 120,
+        "cinema": 3,
+        "language": "japanese",
+        "version": "2D",
+        "image": "assets/gridman.jpg"
+    },
+    {
+        "name": "Gridman Universe",
+        "type": "Animation",
+        "bookedSeat": [],
+        "showtime": "2023/12/04 10:00",
+        "RunTime": 120,
+        "cinema": 1,
+        "language": "japanese",
+        "version": "2D",
+        "image": "assets/gridman.jpg"
+    },
+    {
+        "name": "Gridman Universe",
+        "type": "Animation",
+        "bookedSeat": [],
+        "showtime": "2023/12/05 12:00",
+        "RunTime": 120,
+        "cinema": 3,
+        "language": "japanese",
+        "version": "2D",
+        "image": "assets/gridman.jpg"
+    },
+    {
+        "name": "Gundam Seed Freedom",
+        "type": "Animation",
+        "bookedSeat": [],
+        "showtime": "2023/12/06 10:00",
+        "RunTime": 90,
+        "cinema": 3,
+        "language": "japanese",
+        "version": "2D",
+        "image": "assets/GUNDAM.jpg"
+    },
+    {
+        "name": "Barbie",
+        "type": "Fiction",
+        "bookedSeat": [],
+        "showtime": "2023/12/09 10:00",
+        "RunTime": 114,
+        "cinema": 1,
+        "language": "english",
+        "version": "2D",
+        "image": "assets/barbie.jpg"
+    },
+    {
+        "name": "Oppenheimer",
+        "type": "Fiction",
+        "bookedSeat": [],
+        "showtime": "2023/12/10 10:00",
+        "RunTime": 180,
+        "cinema": 3,
+        "language": "english",
+        "version": "2D",
+        "image": "assets/oppenheimer.jpg"
+    },
+    {
+        "name": "The Marvels",
+        "type": "Marvel",
+        "bookedSeat": [],
+        "showtime": "2023/12/10 10:00",
+        "RunTime": 180,
+        "cinema": 4,
+        "language": "english",
+        "version": "2D",
+        "image": "assets/themarvels.jpg"
+    }
+]
