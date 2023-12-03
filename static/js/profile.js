@@ -3,6 +3,7 @@
 $.get('/auth/me').done(function (data) {
     // Set user avatar and username
     document.querySelector('title').text = data.user.username + ' Profile';
+    $('.user-role').text(data.user.role);
     document.querySelector('.image-avatar').src = data.user.avatar;
     document.querySelector('.username-con').innerHTML = data.user.username;
     document.querySelector('#nickname').value = data.user.nickname;
