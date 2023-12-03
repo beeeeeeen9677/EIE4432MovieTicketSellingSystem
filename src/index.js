@@ -46,7 +46,7 @@ app.use('/history', (req, res) => {
     res.sendFile(path.join(__dirname, '../static/history.html'));
 });
 
-app.use('/', express.static('static'));
+app.use('/', express.static(path.join(process.cwd(), '/static')));
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../static/notFound.html'));
